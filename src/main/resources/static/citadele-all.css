@@ -1,0 +1,375 @@
+@import url("/common/css/ui.tabs.css");
+/*19-07-2007*/
+/* css reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { margin: 0; padding: 0 }
+table { border-collapse: collapse; border-spacing: 0; border: none; width: 100% }
+table td { margin: 0; padding: 0; vertical-align: top }
+fieldset,img { border: 0 }
+address,caption,cite,code,dfn,em,strong,th,var { font-style: normal; font-weight: normal }
+ol,ul { list-style: none }
+caption,th { text-align: left }
+h1,h2,h3,h4,h5,h6 { font-size: 100%; font-weight: normal }
+q:before,q:after { content:'' }
+abbr,acronym { border: 0 }
+/* css reset end */
+
+html, body { height: 100% }
+body { background-color: #ffffff; color: #353535; font-family: Arial, Verdana, Tahoma, sans-serif }
+
+a:link { color: #aa1414; font-weight: normal; text-decoration: none }
+a:visited { color: #ff5a5a; font-weight: normal; text-decoration: none }
+a:hover, a:active { color: #ff5a5a; font-weight: normal; text-decoration: none }
+#promo-block2 a:link, #promo-block2 a:visited, #promo-block-ru a:link, #promo-block-ru a:visited, dt.atm-links a:link, dt.atm-links a:visited { color: #ff5a5a; font-weight: normal; text-decoration: none }
+#promo-block2 a:hover, #promo-block2 a:active, #promo-block-ru a:hover, #promo-block-ru a:active, dt.atm-links a:hover, dt.atm-links a:active { color: #aa1414; font-weight: normal; text-decoration: none }
+
+h1 { color: #black; font-size: 120%; line-height: 1.3em }
+h2 { color: #353535; font-weight: bold; font-size: 130%; line-height: 1.3em; margin: 1.5em 0 -6px 0;  }
+strong { font-weight: bold }
+
+/* all grey links */
+.grey a:link, .grey a:visited { color: #737879; font-weight: normal; text-decoration: none }
+.grey a:hover, .grey a:active { color: #aa1414; font-weight: normal; text-decoration: none }
+/* all grey links end */
+
+div#container {
+    background-color: #ffffff;
+    width: 97%;
+    max-width:1300px;
+    width:expression(document.body.clientWidth > 1300? "1300px": "97%" );
+    position: relative;
+    min-height: 100%
+}
+
+* html div#container {
+    height: 100%;
+}
+
+div#top-line { width: 100%; height: 13px; background-color: #ffffff }
+ul#language { margin: 0; font-size: 70%; text-align: right; width: auto; padding: 13px 271px 0 0 }
+ul#language li { display: inline; padding-right: 13px; margin: 0 }
+ul li.lang { padding-left: 26px }
+table td#logo { padding: 17px 0 0 27px; width: 81px }
+table td#logo-plus { padding: 17px 0 0 27px; width: 164px }
+/* added logo id for ebrd logo on first page www.parex.ru 13.11.2009, Sergey Scherbakov */
+table td#logo-ebrd { padding: 17px 0 0 27px; width: 166px }
+.padding-logo { padding: 0 0 20px 0 } /* do not use ".padding-logo" class when main navigation letters have no descenders */
+
+/* pdf and other icon lists; "/media/interview/" style */
+div#icons-txt { color: #999999 }
+div.icons { margin-bottom: 2em }
+.small-txt { font-size: 90%; color: #4f4f4f; margin-top: 0.3em }
+p.icons2 { padding: 0; margin: 0; color: #999999 }
+/* pdf and other icon lists; "/media/interview/" style end */
+
+/* MAIN NAVIGATION */
+ul#sub-menu { margin: 0 0 19px 0; font-size: 75% }
+ul#sub-menu li { display: inline; padding-right: 13px }
+table td#menu { padding: 0 0 0 43px; vertical-align: bottom }
+table td#menu-ee { padding: 0 0 7px 43px; vertical-align: bottom }
+table td#menu-plus-1st { #padding: 0 0 3px 43px; vertical-align: bottom; padding: 0 0 3px 43px }
+/* table td#digi-table { padding: 0 27px 0 0; vertical-align: bottom } */
+table td#digi-table { padding: 0 27px 0 0 }
+ul.menu { padding: 0; margin: 0; width: 100%; position: relative }
+/* changed 27px to 18px, for some purposes Sergey Scherbakov @ 19.07.2010 */
+ul.menu li { padding: 0 18px 0 0; margin: 0; float: left }
+
+/* added style for Firefox only for menu not to jump in any firefox SS @ 19.12.2011 */
+@-moz-document url-prefix() {
+    ul.menu li { padding: 0 18px 0 0; margin: 0; float: left; padding-bottom:3px }
+}
+
+/* added style for Google Chrome only for menu not to jump in any firefox SS @ 19.12.2011 */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    ul.menu li { padding: 0 18px 0 0; margin: 0; float: left; padding-bottom:4px }
+}
+
+ul.menu li a { position: relative; display: block }
+ul.menu li a img { z-index: 2 }
+
+
+
+ul.menu-private { padding: 0; margin: 0; width: 100%; position: relative }
+/* changed 27px to 18px, for some purposes Sergey Scherbakov @ 19.07.2010 */
+ul.menu-private li { padding: 0 18px 0 0; margin: 0; float: left }
+
+
+ul.menu-private li a { position: relative; display: block }
+ul.menu-private li a img { z-index: 2 }
+
+
+
+
+ul.menu-ru { padding: 0; margin: 0; width: 100%; position: relative }
+/* changed 27px to 18px, for some purposes Sergey Scherbakov @ 19.07.2010 */
+ul.menu-ru li { padding: 0 16px 0 0; margin: 0; float: left }
+
+
+/* added style for Firefox only for menu not to jump in any firefox SS @ 23.01.2012. */
+@-moz-document url-prefix() {
+    ul.menu-ru li { padding: 0 18px 0 0; margin: 0; float: left; padding-bottom:3px }
+}
+
+/* added style for Google Chrome only for menu not to jump in any firefox SS @ 23.01.2012. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    ul.menu-ru li { padding: 0 18px 0 0; margin: 0; float: left; padding-bottom:4px }
+}
+
+ul.menu-ru li a { position: relative; display: block }
+ul.menu-ru li a img { z-index: 2 }
+
+
+
+ul.menu-private-ru { padding: 0; margin: 0; width: 100%; position: relative }
+/* changed 27px to 18px, for some purposes Sergey Scherbakov @ 19.07.2010 */
+ul.menu-private-ru li { padding: 0 18px 0 0; margin: 0; float: left }
+ul.menu-private-ru li a { position: relative; display: block }
+ul.menu-private-ru li a img { z-index: 2 }
+
+/* Menu for Citadelizings.lv */
+ul.menu-lizings { padding: 0; margin: 0; width: 100%; position: relative }
+ul.menu-lizings li { padding: 0 27px 0 0; margin: 0; float: left }
+ul.menu-lizings li a { position: relative; display: block }
+ul.menu-lizings li a img { z-index: 2 }
+/* end of Menu for Citadelizings.lv */
+
+/* put another class to the added maain navigation image */
+/* navigation for citadele.lv, latvian / russian */
+ul.menu li a .private { height: 21px; width: 146px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.menu li a .business { height: 21px; width: 127px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.menu li a .assets { height: 21px; width: 202px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+
+ul.menu-private li a .private { height: 21px; width: 146px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.menu-private li a .business { height: 21px; width: 127px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.menu-private li a .assets { height: 21px; width: 202px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+
+ul.menu-ru li a .private-ru { height: 21px; width: 144x; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.menu-ru li a .business-ru { height: 21px; width: 134px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.menu-ru li a .assets-ru { height: 21px; width: 212px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.menu li a .about-en { height: 21px; width: 103px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.menu li a .services-en { height: 21px; width: 71px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.menu li a .contact-en { height: 21px; width: 93px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+
+
+ul.menu li a .private-ee-ee { height: 22px; width: 108px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.menu li a .corporate-ee-ee { height: 22px; width: 105px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.menu li a .private-ee-ru { height: 17px; width: 190px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.menu li a .corporate-ee-ru { height: 17px; width: 170px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.menu li a .private-ee-en { height: 18px; width: 165px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.menu li a .corporate-ee-en { height: 18px; width: 181px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+
+ul.menu li a .private-lz { height: 19px; width: 131px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.menu li a .business-lz { height: 19px; width: 114px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.menu li a .objects-lz { height: 19px; width: 167px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+
+ul.menu li a:hover { border-color: white }
+ul.menu-private li a:hover { border-color: white }
+
+/* put another class to the added main navigation image */
+
+/* Citadele.lv */
+ul.menu li a:hover .private  { visibility: visible }
+ul.menu li a:hover .business { visibility: visible }
+ul.menu li a:hover .assets { visibility: visible }
+
+ul.menu-private li a:hover .private  { visibility: visible }
+ul.menu-private li a:hover .business { visibility: visible }
+ul.menu-private li a:hover .assets { visibility: visible }
+
+ul.menu-ru li a:hover .private-ru  { visibility: visible }
+ul.menu-ru li a:hover .business-ru { visibility: visible }
+ul.menu-ru li a:hover .assets-ru { visibility: visible }
+
+/* Citadelebank.com */
+ul.menu li a:hover .about-en  { visibility: visible }
+ul.menu li a:hover .services-en  { visibility: visible }
+ul.menu li a:hover .contact-en  { visibility: visible }
+
+/* Citadele.ee */
+ul.menu li a:hover .private-ee-ee  { visibility: visible }
+ul.menu li a:hover .corporate-ee-ee  { visibility: visible }
+ul.menu li a:hover .private-ee-ru  { visibility: visible }
+ul.menu li a:hover .corporate-ee-ru  { visibility: visible }
+ul.menu li a:hover .private-ee-en  { visibility: visible }
+ul.menu li a:hover .corporate-ee-en  { visibility: visible }
+
+/* Citadelelizings.lv */
+ul.menu li a:hover .private-lz  { visibility: visible }
+ul.menu li a:hover .business-lz  { visibility: visible }
+ul.menu li a:hover .objects-lz  { visibility: visible }
+
+/* table#digi { width: 187px } */
+table#digi { width: auto; margin-top: 42px }
+input.digi-form { border: #737879 1px solid; font-size: 80%; color: #353535; padding: 1px; margin: 0 }
+
+/* LINK TO ONLINE BANKING */
+ul.digi { padding: 0; margin: 0; position: relative }
+ul.digi li a { position: relative; display: block }
+ul.digi li a img { z-index: 2 }
+
+
+ul.digi li a .onlinebanking-lv { height: 14px; width: 170px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.digi li a .onlinebanking-ru { height: 14px; width: 167px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.digi li a .onlinebanking-ee { height: 16px; width: 166px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+ul.digi li a .onlinebanking-com { height: 16px; width: 174px; cursor: pointer; position: absolute; visibility: hidden; z-index: 1 }
+
+
+ul.digi li a:hover .onlinebanking-com, ul.digi li a:hover .onlinebanking-lv, ul.digi li a:hover .onlinebanking-ru, ul.digi li a:hover .onlinebanking-ee { visibility: visible }
+
+ul.digi li a:hover { border-color: white }
+/* LINK TO ONLINE BANKING END */
+
+/* .ru navigation */
+#menu-txt a:link, #menu-txt a:visited { color: #ff5a5a; font-weight: normal; text-decoration: none }
+#menu-txt a:hover, #menu-txt a:active { color: #ff2a2e; font-weight: normal; text-decoration: none }
+#menu-txt { color: #ff2a2e; font-weight: bold; font-size: 90%; width: auto }
+table td#menu-txt { padding-right: 27px }
+/* .de .ru navigation end */
+
+/* MAIN NAVIGATION END */
+
+/* BANNERS ON FIRST PAGE */
+div#promo-margin { padding: 22px 27px 0 27px }
+div#promo-margin2 { padding: 27px } /* use the "promo-margin2" id when main navigation letters have no descenders */
+table#promo-block { border: #e5e4de 1px solid; background-color: #fbfbfb }
+table td#promo-block1 { padding: 13px 7px 13px 13px }
+table td#promo-block2 { vertical-align: middle; font-size: 80% }
+table td#promo-block-ru { padding: 0 0 0 27px; vertical-align: middle }
+div#banner { width: 100% }
+div#amex { width: auto; font-size: 70%; padding: 13px 13px 13px 5px; margin-top: 13px; background-color: #f4f4f4; vertical-align: bottom }
+div#product-cantainer { width: 100%; font-size: 80%; text-align: center }
+div#float { float: left; width: 50% }
+div#float p { text-align: center }
+div.products { width: 203px; text-align: center }
+/* BANNERS ON FIRST PAGE END */
+
+/* USEFUL THINGS, SPECIAL OFFERS AND NEWS 1ST PAGE */
+#first-txt { font-size: 80%; line-height: 1.4em }
+div#content-margin { padding: 0 27px 27px 27px; padding-bottom: 150px }
+#spacer { width: 27px }
+table#useful-margin { margin-top: 27px; margin-bottom: 23px }
+#useful { background-color: #f6f6f6; padding: 13px; font-size: 70% }
+table#useful-pad { margin-top: 6px; font-size: 100%; width: 90% }
+table#useful-pad td { padding-bottom: 0.3em }
+table#useful-pad2 { margin-top: 6px; font-size: 100%; width: auto }
+table#useful-pad2 td { padding-bottom: 0.3em }
+#dd-pad { margin-top: 13px }
+dl#dd-pad dd { padding-bottom: 0.3em; font-weight: bold }
+dl#dd-pad dd a:link, dl#dd-pad dd a:visited, dl#dd-pad dd a:hover, dl#dd-pad dd a:active { font-weight: bold }
+table td#header { font-weight: bold }
+table td#header a:link, table td#header a:visited, table td#header a:hover, table td#header a:active { font-weight: bold }
+div#spacer { width: 473px; height: 0 }
+/* div#news { margin-top: 27px; float: left; position: relative; width: 48% } */
+/*div#news { margin-top: -5px }*/
+div#news { margin-top: -2px }
+dl#news-list { font-size: 80%; color: #353535 }
+dt#news-list { margin-top: 13px; font-size: 85% }
+dd#news-list { line-height: 1.3em; margin-bottom: 1em }
+div#allnews { font-size: 80%; margin-top: 13px }
+/* div#news-links { margin-top: 27px; float: right; position: relative; border-left: #e5e4de 1px solid; padding-left: 13px; font-size: 70%; width: 45% } */
+div#news-links { margin-top: 27px; float: right; border-left: #e5e4de 1px solid; padding-left: 13px; font-size: 70%; width: 45% }
+dl dt { line-height: 1.3em; margin-bottom: 0.4em }
+table#offers { margin-top: 13px; border: #e5e4de 1px solid; max-width: auto; width: 100% }
+table#offers td { font-size: 70%; padding: 13px 13px 13px 13px }
+#offers a:link, #offers a:visited { color: #ff5a5a; font-weight: normal; text-decoration: none }
+#offers a:hover, #offers a:active { color: #aa1414; font-weight: normal; text-decoration: none }
+table td.offers-left { padding-right: 6px; width: 76% }
+table td.offers-right { padding-left: 7px; width: 24% }
+/* USEFUL THINGS, SPECIAL OFFERS AND NEWS 1ST PAGE END */
+
+/* FOOTER */
+#footer2 { bottom: 0; background-color: #ffffff; width: 100% }
+#footer { position: absolute; bottom: 0; background-color: #ffffff; width: 100% }
+#footer-pad { padding: 0 27px 13px 27px }
+table#footer2 td { border-top: #e5e4de 2px solid;}
+table#search { width: 187px; margin: 12px 0 0 0;  }
+table#search td { border: 0; margin: 0; padding: 0 }
+input.search-form { border: #737879 1px solid; font-size: 80%; color: #353535; padding: 1px; margin: 0 }
+div#copyright { margin-top: 19px; font-size: 70% }
+ul#contacts{ margin: 0; width: auto; margin: 10px 0 0 0;  font-size: 70%  }
+ul#contacts li { display: inline; padding-right: 13px; margin: 0 }
+ul li.cont { padding-left: 26px }
+/* FOOTER END */
+
+/* 2ND PAGE LAYOUT */
+div#crumbs { font-size: 70%; margin-bottom: 12px; line-height: 1.4em }
+table#content { margin-top: 27px }
+#content-center { padding: 0 27px 0 27px }
+#content-center-txt { font-size: 80%; line-height: 1.4em; margin-top: 13px }
+#content-center-txt p { margin: 1em 1em 0 0 }
+#content-center-txt table {font-size: 100% }
+#content-center-image { background-color: #fec357; height: 144px; width: 100%; margin: 10px 0 27px 0 }
+#content-center-image-corner { background: url(/common/img/stress-corner.gif) top right no-repeat }
+/* #content-center-image-cv { background-color: #70c6f8; height: 144px; width: 100%; margin: 10px 0 27px 0 } */
+#content-center-image-cv { background-color: #718d90; height: 144px; width: 100%; margin: 10px 0 27px 0 }
+#content-center-image-cv-corner { background: url(/common/img/stress-corner-cv.gif) top right no-repeat }
+#content-right {}
+#left-width { width: 180px }
+
+/* Bulleted lists */
+ul#offers-list { font-size: 80%; margin-top: 13px }
+ul#offers-list li { padding-left: 18px; margin-left: 1px; background: url(/common/img/bull_offers.gif) 0 0.2em no-repeat; line-height: 1.3em; margin-bottom: 0.3em }
+ul#bull-list li { padding-left: 10px; background-image: url(/common/img/bull2.gif); background-repeat: no-repeat; background-position: 0 0.7em; line-height: 1.5em }
+/* Bulleted lists end */
+
+/* Left menu */
+ul#leftmenu { width: 180px; margin-top: -3px; font-weight: bold }
+ul#leftmenu li { margin: 0; padding-top: 0.25em; padding-bottom: 0.25em; line-height: 1.3em; font-size: 80% }
+ul#leftmenu li.three { font-size: 70%; padding-left: 13px }
+ul#leftmenu li.four { font-size: 70%; padding-left: 26px }
+ul#leftmenu li.five { font-size: 70%; padding-left: 39px }
+/* Left menu end */
+
+
+
+/* Related links */
+#related { width: 197px }
+div#related { border: #e5e4de 1px solid; padding: 13px; margin-top: 41px; width: auto; font-size: 70%; background-color: #fbfbfb }
+div#related dd { line-height: 1.3em; margin-bottom: 0.4em; font-weight: bold }
+div#related-parexlv { border: #e5e4de 1px solid; padding: 13px; margin-top: 68px; width: auto; font-size: 70%; background-color: #fbfbfb }
+div#related-parexlv dd { line-height: 1.3em; margin-bottom: 0.4em; font-weight: bold }
+/* Related links end */
+
+div.suptext, p.suptext, span.suptext, span.atm-num { font-size: 85%; color: #4c4c4c }
+div.stress { background-color: #fec357; color: #000000; line-height: 1.5em }
+div.stress2 { background: url(/common/img/stress-corner.gif) top right no-repeat; padding: 19px }
+/* 2ND PAGE LAYOUT END */
+
+/* FOR PRESS ROOM AND PHOTO'S */
+div.float { float: left; margin: 5px 27px 27px 0; width: 162px; height: 260px }
+div.float-vice { float: left; margin: 5px 27px 27px 0; width: 162px; height: 300px } /* added class for Vice president section in Media room (Sergey) */
+div.float2 { float: left; margin: 5px 27px 27px 0; width: 162px; height: 215px } /* /media/visual/branches/ */
+div.float-logo { float: left; margin: 5px 27px 54px 0 }
+/* FOR PRESS ROOM AND PHOTO'S END */
+
+/* TABLES */
+table#tables { border-top: #aa1414 2px solid }
+table#tables td { padding: 7px 2px 7px 2px; border-bottom: #e5e4de 1px solid }
+p.table-head { padding-bottom: 4px; font-weight: bold }
+
+table.tables { border-top: #aa1414 2px solid }
+table.tables td { padding: 7px 2px 7px 2px; border-bottom: #e5e4de 1px solid }
+
+table.tables-inside td { padding: 7px 2px 7px 2px; border-bottom: #e5e4de 1px solid }
+
+/* Calculators */
+#calc-table td { padding: 6px 0 6px 0 }
+table#calc-res { width: auto; border-top: #aa1414 2px solid }
+table#calc-res td { padding: 7px 2px 7px 2px; border-bottom: #e5e4de 1px solid }
+/* Calculators end */
+/* TABLES END */
+
+/* ATM TOGGLE LISTS */
+dt.atm-links { line-height: 1.5em }
+dd.atm { line-height: 1.6em; padding-bottom: 1em; margin-top: -0.4em }
+/* ATM TOGGLE LISTS END */
+
+/* FAQ TOGGLE LISTS */
+.faq2 { position: relative }
+dt.faq-links { line-height: 1.5em }
+dd.faq { padding-bottom: 1em; margin-top: -0.5em;  }
+/* FAQ TOGGLE LISTS END */
+
+/* COUNTRIES 1ST PAGE */
+dl.countries { font-size: 80% }
+dl.countries dd { padding-bottom: 0.5em }
+/* COUNTRIES 1ST PAGE END */

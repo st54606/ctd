@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta>
+    <style>
+        table {
+            width: 100%;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 12px;
+        }
+
+        .line {
+            border: 0;
+            border-bottom: 1px dashed #000;
+            outline: 0;
+            position: relative;
+            bottom: 3px;
+            font-size: 14px;
+            height: 20px;
+            width: 100%;
+        }
+
+        tr, td {
+            border: 0;
+            padding: 0;
+        }
+
+        hr {
+            width: 100%;
+            height: 0;
+            border: 2px solid #640001;
+            margin: 3px 0;
+        }
+
+        .title {
+            font-size: 18px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .sub-title {
+            font-size: 16px;
+            margin: 2px 0;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tbody>
+    <tr>
+        <td style="padding-right: 20px" width="120">
+            <img alt="logo"
+                 src="../templates/img/citadele-logo.gif" width="120"/>
+        </td>
+        <td>
+            <h4 class="title">Maksājuma uzdevums</h4>
+            <h5 class="sub-title">Payment order</h5>
+            <h5 class="sub-title">Платежное поручение</h5>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table style="margin-top: -10px">
+    <tbody>
+    <tr>
+        <td rowspan="2" style="vertical-align: bottom" width="50%">
+            AS „Citadele banka”, Reģ. nr. 40103303559
+            <br/>
+            Republikas laukums 2A, Rīga, LV-1010, Latvija
+        </td>
+        <td>
+            <table style="margin-top: -5px">
+                <tr>
+                    <td align="right" style="padding-right: 10px; vertical-align: bottom">
+                        <div style="width: 110px; text-align: left">Kl. num. / Cust. num</div>
+                    </td>
+                    <td align="right" width="100">
+                        <div class="line">{{customerNumber}}</div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <table style="margin-top: -5px">
+                <tr>
+                    <td align="right" style="padding-right: 10px; vertical-align: bottom">
+                        <div style="width: 110px; text-align: left">Datums/ Date</div>
+                    </td>
+                    <td align="right" width="100">
+                        <div class="line">{{currentDate}}</div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<hr style="margin-top: -3px"/>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td colspan="2" style="font-size: 16px"><b>Maksātājs/ Remitter / Плательщик</b></td>
+    </tr>
+    </tbody>
+</table>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td colspan="2">Vārds, uzvārds / Uzņēmuma nosaukums</td>
+    </tr>
+
+    <tr>
+        <td>
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="170">
+                        <small>Name,surname / Company name</small>
+                        <br/>
+                        <small>Имя, Фамилия / Название фирмы</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{remitter.name}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td colspan="2">Personas kods / Reģistrācijas Nr</td>
+    </tr>
+
+    <tr>
+        <td>
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="205">
+                        <small>Personal ID number / Registration No</small>
+                        <br/>
+                        <small>Персональный код / Регистрационный Nº</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{remitter.code}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td colspan="2">Konta Nr.</td>
+    </tr>
+
+    <tr>
+        <td>
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="55">
+                        <small>Account No</small>
+                        <br/>
+                        <small>Nº счета</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{remitter.accountNumber}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<hr style="margin-top: -3px"/>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td colspan="2"><b style="font-size: 16px">Saņēmējs / Beneficiary / Получатель</b></td>
+    </tr>
+    </tbody>
+</table>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td colspan="2">Vārds, uzvārds / Uzņēmuma nosaukums</td>
+    </tr>
+
+    <tr>
+        <td>
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="170">
+                        <small>Name,surname / Company name</small>
+                        <br/>
+                        <small>Имя, Фамилия / Название фирмы</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{beneficiary.name}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td colspan="2">Personas kods / Reģistrācijas Nr</td>
+    </tr>
+
+    <tr>
+        <td>
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="205">
+                            <small>Personal ID number / Registration No</small>
+                        <br/>
+                        <small>Персональный код / Регистрационный Nº</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{beneficiary.registrationNumber}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td>Konta Nr.</td>
+        <td>Rezidences valsts</td>
+    </tr>
+
+    <tr>
+        <td style="padding-right: 10px" width="50%">
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="55">
+                        <small>Account No</small>
+                        <br/>
+                        <small>Nº счета</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{beneficiary.accountNumber}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+
+        <td>
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="105">
+                        <small>Residence country</small>
+                        <br/>
+                        <small>Страна резиденции</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{beneficiary.residenceCountry}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td>Saņēmējbanka</td>
+        <td>Bankas kods</td>
+    </tr>
+
+    <tr>
+        <td style="padding-right: 10px" width="60%">
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="90">
+                        <small>Beneficiary bank</small>
+                        <br/>
+                        <small>Банк получателя</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{beneficiary.bankName}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+
+        <td>
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="85">
+                        <small>Bank code</small>
+                        <br/>
+                        <small>Банковский код</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{beneficiary.bankCode}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<hr style="margin-top: -3px"/>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td colspan="2"><b style="font-size: 16px">Maksājuma informācija / Payment information / Информация о
+            платеже</b></td>
+    </tr>
+    </tbody>
+</table>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td>Summa cipariem un valūta</td>
+        <td>Bankas komisija</td>
+    </tr>
+
+    <tr>
+        <td style="padding-right: 10px" width="60%">
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="140">
+                        <small>Amount in figures and currency</small>
+                        <br/>
+                        <small>Сумма цифрами и валюта</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{paymentInformation.amountAndCurrency}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+
+        <td>
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="90">
+                        <small>Bank fee</small>
+                        <br/>
+                        <small>Комиссия банка</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{paymentInformation.bankFee}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td colspan="2">Summa vārdiem</td>
+    </tr>
+
+    <tr>
+        <td>
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="90">
+                        <small>Amount in words</small>
+                        <br/>
+                        <small>Сумма прописью</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{paymentInformation.amountInWords}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td>Maksājuma veids</td>
+        <td>Maiņas kurss</td>
+    </tr>
+
+    <tr>
+        <td style="padding-right: 10px" width="50%">
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="70">
+                        <small>Payment type</small>
+                        <br/>
+                        <small>Вид платежа</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{paymentInformation.paymentType}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+
+        <td>
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="85">
+                        <small>Exchange rate</small>
+                        <br/>
+                        <small>Обменный курс.</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{paymentInformation.exchangeRate}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td>Valutēšanas datums</td>
+        <td>Ārējā maksājuma kods</td>
+    </tr>
+
+    <tr>
+        <td style="padding-right: 10px" width="50%">
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="110">
+                        <small>Value date</small>
+                        <br/>
+                        <small>Дата валютирования</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{paymentInformation.valueDate}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+
+        <td>
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="135">
+                        <small>Code of external payment</small>
+                        <br/>
+                        <small>Код зарубежного платежа.</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{paymentInformation.codeOfExternalPayment}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td colspan="2">Maksājuma mērķis</td>
+    </tr>
+
+    <tr>
+        <td>
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td width="110">
+                        <small>Payment details</small>
+                        <br/>
+                        <small>Назначение платежа</small>
+                    </td>
+
+                    <td style="vertical-align:bottom">
+                        <div class="line">{{paymentInformation.paymentDetails}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <table>
+                <tbody>
+                <tr>
+                    <td>
+                        <div class="line"></div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<hr style="margin-top: -3px"/>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td colspan="2"><b style="font-size: 16px">Paraksti / Signatures / Подписи</b></td>
+    </tr>
+    </tbody>
+</table>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td width="50%">
+            Klients / Pilnvarotā persona
+        </td>
+
+        <td>
+            Bankas darbinieks
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td>
+                        <small>Customer / Authorized person</small>
+                        <br/>
+                        <small>Клиент / Уполномоченное лицо</small>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+
+        <td>
+            <table style="margin-top: -5px">
+                <tbody>
+                <tr>
+                    <td>
+                        <small>Bank officer</small>
+                        <br/>
+                        <small>Работник банка</small>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table style="margin-top: -5px">
+    <tbody>
+    <tr>
+        <td align="right" style="padding-right: 40px" width="50%">
+            <div style="text-align: left; display: inline-block">
+                <b style="font-size: 14px">Z.V.</b>
+                <br/>
+                <small>S.P</small>
+                <br/>
+                <small>М.П</small>
+            </div>
+        </td>
+
+        <td align="right" style="padding-right: 40px">
+            <div style="text-align: left; display: inline-block">
+                <b style="font-size: 14px">Z.V.</b>
+                <br/>
+                <small>S.P</small>
+                <br/>
+                <small>М.П</small>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<hr/>
+
+<div style="text-align: right; text-transform: uppercase">MU/UZ/M-JF-XX-0510-05-LV</div>
+</body>
+</html>
