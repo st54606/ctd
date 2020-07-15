@@ -10,17 +10,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.ws.rs.core.Response;
+
 
 @RestController
 public class MailResource {
     @Autowired private EmailService service;
 
-    @RequestMapping(value = "/sendEmail", method = RequestMethod.POST,
+    @RequestMapping(value = "/sendEmail",
+            method = RequestMethod.POST,
             produces = {MediaType.APPLICATION_JSON_VALUE,
                     MediaType.APPLICATION_XML_VALUE})
     @ResponseBody
-    public PaymentFormData sendEmail(@RequestBody PaymentFormData paymentFormData) {
+    public Response sendEmail(@RequestBody PaymentFormData paymentFormData) {
         service.send(paymentFormData);
-        return paymentFormData;
+        return Response
+                .status(Response.Status.OK)
+                .entity(new PaymentFormData())
+                .build();
     }
 }

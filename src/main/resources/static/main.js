@@ -1,11 +1,8 @@
 var app = angular.module("EmailService", []);
 
-// Controller Part
 app.controller("RestController", function($scope, $http) {
     $scope.paymentForm = {
-        //currentDate: currentDate(),
-        empNo: "",
-        empName: ""
+        currentDate: new Date()
     };
 
     $scope.sendEmail = function() {
@@ -22,13 +19,12 @@ app.controller("RestController", function($scope, $http) {
         }).then(_success, _error);
     };
 
-    function _success(res) {
-        _clearFormData();
+    function _success() {
+        alert("Successfully done");
     }
 
-    function _error(res) {
-        var data = res.data;
-        var status = res.status;
-        alert("Error: " + status + ":" + data);
+    function _error() {
+        alert("Something went wrong");
     }
+
 });
