@@ -22,6 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoInteractions;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -37,7 +38,7 @@ class MailResourceTest {
 
     @SneakyThrows
     @Test
-    void sendEmail() {
+    void sendEmail_shouldReturnOk() {
         PaymentFormData paymentFormData = PaymentDataMockUtils.getPaymentFormData();
         String json = mapper.writeValueAsString(paymentFormData);
 
@@ -59,4 +60,19 @@ class MailResourceTest {
         assertEquals(paymentFormData.getCurrentDate(), capturedPayment.getCurrentDate());
 
     }
+
+    @SneakyThrows
+    @Test
+    public void test_sendEmail_ShouldReturnError415_WrongMediaType(){
+        PaymentFormData paymentFormData = PaymentDataMockUtils.getPaymentFormData();
+        String json = mapper.writeValueAsString(paymentFormData);
+
+        mockMvc.perform(post("/sendEmail")
+                .content(json))
+                .andDo(print())
+                .andExpect(status().is(415));
+
+        verifyNoInteractions(service);
+    }
+
 }
